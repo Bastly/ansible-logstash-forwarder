@@ -36,6 +36,9 @@
   command: gem install fpm 
   when: fpm_is_installed.stdout_lines[0] != "true"
 
+- name: checkout working commit
+  command: git checkout 9c69a36a55897af4792f3c78b14267dd93abcc74 chdir=/tmp/logstash-forwarder 
+
 - name: make deb
   command: env PATH=$PATH:/usr/local/go/bin make deb chdir=/tmp/logstash-forwarder creates=/tmp/logstash-forwarder/logstash-forwarder_0.3.1_amd64.deb
 
