@@ -18,6 +18,11 @@
 - name: add export PATH=$PATH:/usr/local/go/bin to /root/.profile
   lineinfile: dest=/root/.profile line="export PATH=$PATH:/usr/local/go/bin"
 
+
+- name: remove previous git download 
+  shell: rm -r /tmp/logstash-forwarder
+  ignore_errors: True
+
 - name: git clone git://github.com/elasticsearch/logstash-forwarder.git
   git: repo=https://github.com/elasticsearch/logstash-forwarder.git dest=/tmp/logstash-forwarder accept_hostkey=True
 
