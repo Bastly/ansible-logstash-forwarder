@@ -8,7 +8,7 @@ logstash_forwarder_files:
   - paths:
       - /var/log/atahualpa.log
     fields:
-      type: syslog
+      type: atahualpa
   # To add more sets of files...
   # - paths:
   #     - /var/log/boot.log
