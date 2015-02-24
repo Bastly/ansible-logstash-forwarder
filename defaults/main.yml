@@ -6,8 +6,7 @@ logstash_forwarder_ssl_certificate_file: lumberjack.crt
 
 logstash_forwarder_files:
   - paths:
-      - /home/vagrant/client
-      - /var/log/auth.log
+      - /var/log/atahualpa.log
     fields:
       type: syslog
   # To add more sets of files...
