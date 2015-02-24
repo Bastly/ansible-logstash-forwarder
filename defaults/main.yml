@@ -6,9 +6,10 @@ logstash_forwarder_ssl_certificate_file: lumberjack.crt
 
 logstash_forwarder_files:
   - paths:
-      - /var/log/atahualpa.log
+      - /var/log/messages
+      - /var/log/auth.log
     fields:
-      type: atahualpa
+      type: syslog
   # To add more sets of files...
   # - paths:
   #     - /var/log/boot.log
